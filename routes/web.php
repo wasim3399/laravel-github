@@ -13,3 +13,7 @@ Route::post('/deploy', function () {
     Artisan::call('up');    // Bring the app out of maintenance mode
     return 'Deployment completed.';
 });
+
+Route::get('/deploy', function () {
+    dd('test');
+});
