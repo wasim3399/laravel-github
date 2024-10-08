@@ -1,0 +1,20 @@
+name: Laravel CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code from the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Run deployment commands
+      - name: Deploy to local environment
+        run: |
+          curl -X POST https://29eb-182-176-122-182.ngrok-free.app/deploy
